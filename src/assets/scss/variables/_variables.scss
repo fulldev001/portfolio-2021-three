@@ -1,0 +1,25 @@
+// Add your variables here
+
+$base-transition: 0.4s;
+$bouncy-bezier: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+$base-cubic-bezier: cubic-bezier(0.75, 0.25, 0.25, 0.75);
+
+@mixin hocus {
+	&:focus, &:hover {
+		@content;
+	}
+	&:focus-within {
+		@content;
+	}
+}
+
+.sr-only {
+	position: absolute;
+	text-indent: -9999px;
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}

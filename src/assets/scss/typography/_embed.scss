@@ -1,0 +1,51 @@
+$font-primary: (
+	font-family: (
+		'Bigilla',
+		serif
+	),
+	weights: (
+		'Bold': 600,
+	),
+	weight-classes: true,
+	load: true,
+	path: '~Fonts',
+	files: (
+		'woff',
+		'woff2',
+		'ttf'
+	),
+	use: (
+		'h1, h2, h3, h4, h5, h6, .fraunces'
+	),
+	types: (
+		'normal',
+	),
+	display: 'swap'
+);
+
+$font-secondary: (
+	font-family: (
+		'Graphik',
+		'Helvetica Neue',
+		sans-serif
+	),
+	weights: (
+		'Regular': 400,
+		'Medium': 500,
+	),
+	weight-classes: true,
+	load: true,
+	path: '~Fonts',
+	files: (
+		'woff',
+		'woff2',
+		'ttf'
+	),
+	use: (
+		'body, .graphik'
+	),
+	types: (
+		'normal',
+	),
+	display: 'swap'
+);

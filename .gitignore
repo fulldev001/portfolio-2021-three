@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+
+vendor
+dist/vendor
+dist
+config/latest
+.vscode
+config/latest.js
+*.sql
+*.sql.gz

@@ -1,0 +1,126 @@
+// Theme
+@import 'typography/typography';
+
+@import '~matise-gryd/gryd-once.scss';
+
+
+@import 'components/index';
+@import 'scroll';
+
+body {
+	background: var(--background-color, #{color(Dark)});
+	color: var(--color, #{color(Light)});
+	[data-router-wrapper] {
+		background: var(--background-color, #{color(Dark)});
+		color: var(--color, #{color(Light)});
+	}
+	[data-router-view] {
+		position: relative;
+		z-index: 1;
+	}
+	&.overflow-hidden {
+		max-width: 100vw;
+		max-height: 100vh;
+		overflow: hidden;
+	}
+	@media (pointer: coarse) {
+		max-width: 100vw;
+		overflow-x: hidden;
+	}
+}
+
+.hide-list-style {
+	list-style: none;
+	margin-top: 2rem;
+	padding: 0;
+	li {
+		margin-top: 1rem;
+	}
+}
+
+.home {
+
+	main {
+		width: max-content;
+	}
+	.cursor {
+		color: color(Dark);
+		justify-content: center;
+		align-items: center;
+		&.not-dragged {
+			&::before {
+				opacity: 1;
+				content: 'Drag!';
+			}
+		}
+		&.view {
+			&::before {
+				opacity: 1;
+				content: 'View';
+			}
+		}
+	}
+	.footer {
+		display: none;
+	}
+	.c-scrollbar {
+		display: none;
+	}
+}
+.cursor {
+	display: none;
+}
+
+@media #{$medium-up} {
+	.cursor {
+		display: flex;
+		position: absolute;
+		pointer-events: none;
+		top: -35px;
+		left: -35px;
+		z-index: 100;
+		background: #eee;
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		mix-blend-mode: difference;
+		transform: scale(0.2);
+		&::before {
+			opacity: 0;
+			transition: 0.4s ease-out;
+		}
+	}
+}
+
+.page-transition {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	z-index: 20;
+	clip-path: inset(101% 0 0 0);
+	pointer-events: none;
+}
+
+
+::selection {
+	background: var(--color);
+	color: var(--background-color);
+}
+
+canvas {
+	display: block;
+}
+#container{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+}

@@ -1,0 +1,35 @@
+.text {
+	padding: grid(2 2 0);
+	@media #{$small-only} {
+		padding: 4rem 1rem 0;
+	}
+	&__inner {
+		max-width: rem(1920);
+		margin: auto;
+		padding: grid(2 0 0);
+		p {
+			max-width: 800px;
+		}
+		&.small-heading {
+			@extend .fraunces;
+			padding: grid(2 1);
+			@media #{$small-only} {
+				padding: 0;
+			}
+			p {
+				max-width: 100%;
+			}
+		}
+		p + * {
+			margin-top: 2em;
+		}
+		p + p {
+			margin-top: 1em;
+		}
+		h3 {
+			& + p {
+				margin-top: 1.5em;
+			}
+		}
+	}
+}

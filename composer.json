@@ -1,0 +1,26 @@
+{
+  "name": "Cyd Stumpel/portfolio-2021-three",
+  "description": "Threejs party",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "johnpbloch/wordpress": "*",
+    "wpackagist-plugin/mailgun": "*",
+    "wpackagist-plugin/tiny-compress-images": "*"
+  },
+  "extra": {
+    "wordpress-install-dir": "dist/wordpress",
+    "installer-paths": {
+      "dist/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "dist/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  }
+}

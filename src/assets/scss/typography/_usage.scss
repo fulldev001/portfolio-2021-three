@@ -1,0 +1,144 @@
+
+@use "sass:math";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+	color: inherit;
+	span, a {
+		font-family: inherit;
+		color: inherit;
+	}
+}
+
+body {
+	font-weight: 400;
+	color: color(Dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+	font-weight: 500;
+	font-weight: 500;
+}
+
+%xxlarge-heading, .xxlarge-heading {
+	font-size: grid(2.4);
+	font-weight: 500;
+	@include min-('font-size', 2.4, 50);
+}
+
+%xlarge-heading, .xlarge-heading {
+	font-size: grid(2);
+	@include min-('font-size', 2, 40);
+	@include max-('font-size', 2, 160);
+}
+
+%large-heading, .large-heading {
+	font-size: grid(1.5);
+	line-height: 1.25;
+	font-weight: 500;
+	@include min-('font-size', 1.5, 38);
+	@include max-('font-size', 1.5, 120);
+}
+
+%home-heading, .home-heading {
+	font-size: grid(1.25);
+	line-height: 1.25;
+	font-weight: 500;
+	@include min-('font-size', 1.5, 38);
+	@include max-('font-size', 1.5, 100);
+}
+
+%medium-heading, .medium-heading {
+	font-size: grid(1);
+	@include min-('font-size', 1, 32);
+	line-height: 1.25;
+}
+
+%small-heading, .small-heading {
+	font-size: grid(math.div(40, 60));
+	@include min-('font-size', math.div(40, 60), 24);
+	line-height: 1.25;
+}
+
+h1 {
+	@extend %large-heading;
+}
+
+h2 {
+	@extend %medium-heading;
+}
+
+h3, h4, h5 {
+	@extend %small-heading;
+}
+
+
+p {
+	line-height: 1.8;
+}
+
+
+%xlarge-body, .xlarge-body {
+	font-size: grid(0.5);
+	line-height: 1.25;
+	@include min-('font-size', math.div(30, 60), 20);
+	@include max-('font-size', math.div(30, 60), 40);
+}
+
+
+%large-body, .large-body {
+	font-size: rem(20);
+	@media #{$medium-down} {
+		font-size: rem(18);
+	}
+}
+
+%small-body, .small-body {
+	font-size: rem(16);
+	display: inline-block;
+}
+
+%xsmall-body, .xsmall-body {
+	font-size: rem(14);
+	display: inline-block;
+}
+
+
+ul li {
+	line-height: 1.25;
+}
+blockquote {
+	position: relative;
+	padding-left: 2rem;
+	margin: 2rem 0;
+	&::before {
+		content: '';
+		position: absolute;
+		background: currentColor;
+		width: 5px;
+		height: 100%;
+		left: 1rem;
+		top: 0;
+	}
+	& + h2 {
+		margin-top: 4rem;
+	}
+}
+
+
+svg {
+	fill: currentColor;
+}

@@ -1,0 +1,41 @@
+.contact {
+	min-height: calc(100vh - 277px);
+	padding: grid(4 0 2);
+	@include max-('padding-top', 4, 320);
+	@media #{$medium-down} {
+		padding: 6rem 1rem 3rem;
+		min-height: calc(100vh - 82px);
+	}
+	h1 {
+		margin-bottom: 1.5rem;
+	}
+	&__links {
+		column-count: 2;
+		margin-top: 3rem;
+		@media #{$small-only} {
+			column-count: 1;
+			margin-top: 2rem;
+		}
+	}
+	.touchpoint {
+		break-inside: avoid;
+		& + .touchpoint {
+			margin-top: grid(0.5);
+			@media #{$small-only} {
+				margin-top: rem(32);
+			}
+		}
+		a {
+			display: flex;
+			align-items: center;
+			margin-left: 1rem;
+			svg {
+				pointer-events: none;
+				margin-right: 10px;
+				width: 2rem;
+				height: 2rem;
+				fill: currentColor;
+			}
+		}
+	}
+}
